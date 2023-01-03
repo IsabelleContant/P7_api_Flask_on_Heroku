@@ -1,0 +1,18 @@
+html {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.h1, h1 {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-style: italic;
+    color: #772b58;
+    text-align: center;
+
+}
+
+img {
+    display: block;
+    width: 12%;
+    margin: auto;
+  }
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <title>API de Prédiction</title>
+  </head>
+
+  <body>
+    <h1>Risque de défaut de paiement pour un prêt bancaire</h1>
+
+    <div class="image">
+      <img src="{{ url_for('static', filename='img/logo_projet_fintech.png') }}" alt="logo">
+    </div>
+
+    <div class="formulaire">
+      <h2>Entrez ci-dessous l'identifiant de votre client pour connaître son score puis tapez sur "Enter" ↩ :</h2>
+      <p style="font-size:75%; font-style:italic;">
+        L'identifiant doit être obligatoirement un nombre à 6 chiffres comme par exemple : 205960, 413756, 344067.
+        <br>
+      </p>
+      <form method="POST" action="/"> 
+        <input type="number" name="id_client">
+      </form>
+      <p>
+        <br>
+        Le client dont l'identifiant est "{{identifiant_text}}" a obtenu le score de {{prediction_text}}%.<br>
+        Il y a un risque de {{prediction_text}}% que le client ait des difficultés de paiement.<br><br>
+        Le client est donc considéré par 'Prêt à dépenser' comme {{solvabilite_text}} et décide de lui {{decision_text}} son crédit.
+      </p>
+    </div>
+
+  </body>
+</html>
