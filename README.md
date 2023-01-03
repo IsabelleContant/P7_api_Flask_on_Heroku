@@ -12,6 +12,6 @@ L’entreprise souhaite mettre en œuvre un outil de scoring crédit qui calcule
 Les données originales sont téléchargeables sur Kaggle à [cette adresse](https://www.kaggle.com/c/home-credit-default-risk/data)
 
 
-**L'API de Prédiction a été réalisée avec Flask et déployée sur Heroku :**
+**L'API de Prédiction a été réalisée avec Flask et déployée sur [Heroku](https://flask-predict-api-p7.herokuapp.com/).**
 
 **Le dashboard a destination des chargés de clientèles a été réalisé avec Streamlit et est accessible sur [Heroku](https://dashboard-streamlit-p7.herokuapp.com/)**
