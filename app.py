@@ -49,8 +49,12 @@ def predict():
     ID = request.form['id_client']
     ID = int(ID)
     if ID not in all_id_client:
-        prediction="Ce client n'est pas répertorié"
+        number="L'identifiant que vous avez saisi n'est pas valide !"
+        prediction="NA"
+        solvabilite="NA"
+        decision="NA"
     else :
+        number=""
         score = y_pred_lgbm_proba_df[y_pred_lgbm_proba_df['sk_id_curr']==ID]
         prediction = round(score.proba_classe_1.iloc[0]*100, 1)
         solvabilite = y_pred_lgbm_df.loc[y_pred_lgbm_df['sk_id_curr']==ID, "client"].values
@@ -59,6 +63,7 @@ def predict():
         decision = decision[0]
 
     return render_template('index.html', 
+                           number=number,
                            identifiant_text=ID,
                            prediction_text=prediction,
                            solvabilite_text=solvabilite,
